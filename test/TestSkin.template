@@ -1,0 +1,30 @@
+{{{headelement}}}
+
+<nav class="navbar">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="/">mediawiki.ui</a>
+	</div>
+
+	<div class="collapse navbar-collapse" id="topmenu">
+		<form class="navbar-form navbar-left" role="search">
+		<div class="form-group">
+				<input type="text" class="form-control search-input" placeholder="Search">
+			</div>
+		</form>
+
+		<ul class="nav navbar-nav navbar-right">
+			<li><a href="#">Desktop</a></li>
+			<li><a href="#">Mobile</a></li>
+		</ul>
+	</div>
+</nav>
+
+<div class="container">
+<h1 class="firstHeading">{{title}}</h1>
+{{{bodytext}}}
+</div>
+</body>
+{{{debughtml}}}
+{{{bottomscripts}}}
+{{{reporttime}}}
+</html>
