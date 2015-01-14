@@ -1,6 +1,6 @@
 <?php
 /**
- * MediaWiki Extension: LightNCandySkin
+ * MediaWiki Extension: LivingStyleGuideSkin
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -32,35 +32,43 @@ EOT;
 }
 
 // Extension credits that will show up on Special:Version
-$wgExtensionCredits['specialpage'][] = array(
+$wgExtensionCredits['skin'][] = array(
 	'path' => __FILE__,
-	'name' => 'LightNCandySkin',
+	'name' => 'LivingStyleGuideSkin',
 	'url' => 'URL to extension information',
 	'author' => array(
 		'Andrew Garrett',
 	),
-	'descriptionmsg' => 'lightncandyskin-desc',
 );
 
 $wgResourceModules += array(
 	'ext.bootstrap' => array(
 		'localBasePath' => __DIR__ . "/bower_components/bootstrap/dist",
-		'remoteExtPath' => 'LightNCandySkin/bower_components/bootstrap/dist',
+		'remoteSkinPath' => 'LivingStyleGuide/bower_components/bootstrap/dist',
 		'group' => 'ext.lightncandyskin',
 		'scripts' => 'js/bootstrap.min.js',
 		'styles' => 'css/bootstrap.min.css',
 	),
-	'skin.styleguide' => array(
+	'skin.styleguide.template' => array(
 		'localBasePath' => __DIR__ . "/bower_components/living-styleguide-template/resources",
-		'remoteExtPath' => 'LightNCandySkin/bower_components/living-styleguide-template/resources',
+		'remoteSkinPath' => 'LivingStyleGuide/bower_components/living-styleguide-template/resources',
 		'group' => 'ext.lightncandyskin',
 		'styles' => 'master.less',
+		'scripts' => 'menu.js',
 		'dependencies' => 'ext.bootstrap',
+	),
+	'skin.styleguide' => array(
+		'localBasePath' => __DIR__ . "/resources",
+		'remoteSkinPath' => 'LivingStyleGuideSkin/resources',
+		'group' => 'ext.lightncandyskin',
+		'styles' => 'resources/skin.less',
+		'dependencies' => array( 'skin.styleguide.template' ),
 	),
 );
 
 require_once __DIR__."/autoload.php";
+require_once __DIR__."/vendor/autoload.php";
 
-SkinFactory::getDefaultInstance()->register( 'test', 'Test Skin', function(){
-	return new SkinTest;
+SkinFactory::getDefaultInstance()->register( 'livingstyleguide', 'Living Style Guide', function(){
+	return new SkinLivingStyleGuide;
 } );

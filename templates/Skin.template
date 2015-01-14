@@ -1,0 +1,62 @@
+{{{headelement}}}
+
+	<div id="off-navigation">
+	{{>sidebar}}
+	</div>
+
+	<div id="site-wrap">
+		<nav class="navbar">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="javascript:void(0)">{{sitename}}</a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="topmenu">
+				<form class="navbar-form navbar-left" action="{{{scriptpath}}}" role="search">
+				<div class="form-group">
+						<input
+							type="text"
+							id="searchInput"
+							class="form-control search-input"
+							placeholder="Search"
+							name="search"
+						>
+						<input type="hidden" name="title" value="Special:Search">
+					</div>
+				</form>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Desktop</a></li>
+					<li><a href="#">Mobile</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="container">
+			<h1 class="firstHeading" id="firstHeading">
+				<span dir="auto">{{{title}}}</span>
+			</h1>
+			{{#if isarticle}}
+				<div id="siteSub">{{msg "tagline"}}</div>
+			{{/if}}
+			<div id="contentSub" {{{userlangattributes}}}>
+				{{{subtitle}}}
+			</div>
+			{{#if undelete}}
+				<div id="contentSub2">{{{undelete}}}</div>
+			{{/if}}
+			{{#if newtalk}}
+				<div class="usermessage">{{newtalk}}</div>
+			{{/if}}
+			{{{bodytext}}}
+			{{#if printfooter}}
+				<div class="printfooter">
+					{{{printfooter}}}
+				</div>
+			{{/if}}
+		</div>
+	</div>
+</body>
+{{{debughtml}}}
+{{{bottomscripts}}}
+{{{reporttime}}}
+</html>

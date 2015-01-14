@@ -1,0 +1,6 @@
+{
+    "require": {
+        "werdnum/simple-lightncandy": "~0.1-dev",
+        "werdnum/mediawiki-lightncandy-skin": "~0.1-dev"
+    }
+}
