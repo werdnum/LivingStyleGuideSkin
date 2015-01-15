@@ -59,7 +59,7 @@ $wgResourceModules += array(
 	),
 	'skin.styleguide' => array(
 		'localBasePath' => __DIR__ . "/resources",
-		'remoteSkinPath' => 'LivingStyleGuideSkin/resources',
+		'remoteSkinPath' => 'LivingStyleGuide/resources',
 		'group' => 'ext.lightncandyskin',
 		'styles' => 'resources/skin.less',
 		'dependencies' => array( 'skin.styleguide.template' ),
